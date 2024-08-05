@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @var \Panzane\Offers\Block\Category\Offer $block
+ */
+
+$offers = $block->getOfferList();
+?>
+
+<?php if ($offers): ?>
+    <div id="offer-list">
+        <?php foreach ($offers as $offer): ?>
+            <?php $image = $block->getMediaPath($offer->getData('image')) ?>
+            <div class="offer">
+                <div class="offer-container">
+                    <?php if ($image): ?>
+                        <img src="<?= $image ?>" alt="<?= $offer->getData('title') ?>"/>
+                    <?php endif; ?>
+                    <p class="title"><?= $offer->getData('title') ?></p>
+                    <a href="<?= $offer->getData('redir_link') ?>" class="redir-link"><?= __('Know more') ?></a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+    {
+        "#offer-list": {
+            "offerSlider": {}
+        }
+    }
+</script>

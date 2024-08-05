@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="panzane_offers" resource="default" engine="innodb" comment="DndOffers">
+        <column xsi:type="int" name="offer_id" unsigned="true" nullable="false" identity="true" comment="Offer ID"/>
+        <column xsi:type="varchar" name="title" nullable="true" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="image" nullable="true" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="redir_link" nullable="true" length="255" comment="Redir link"/>
+        <column xsi:type="text" name="categories" nullable="true" comment="Categories"/>
+        <column xsi:type="date" name="from_date" comment="From"/>
+        <column xsi:type="date" name="to_date" comment="To"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="offer_id"/>
+        </constraint>
+        <index referenceId="PANZANE_OFFERS_FROM_TIME" indexType="btree">
+            <column name="from_date"/>
+        </index>
+        <index referenceId="PANZANE_OFFERS_TO_TIME" indexType="btree">
+            <column name="to_date"/>
+        </index>
+    </table>
+</schema>

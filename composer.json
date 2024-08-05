@@ -1,0 +1,27 @@
+{
+  "name": "panzane/module-offers",
+  "description": "Panzane Offers",
+  "require": {
+    "magento/framework": ">=102.0.0",
+    "magento/module-backend": ">=100.0.1"
+  },
+  "type": "magento2-module",
+  "version": "100.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Panzane\\Offers\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Thomas Rivallain"
+    }
+  ]
+}
